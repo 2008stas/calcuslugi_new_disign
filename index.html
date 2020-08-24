@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- og -->
+        <meta
+            property="og:title"
+            content="Калькулятьр коммунальных услуг Украины"
+        />
+        <meta property="og:locale" content="ua_UA" />
+        <meta property="og:site_name" content="CalcUslug" />
+        <meta property="og:type" content="Калькулятьр коммунальных услуг" />
+        <meta property="og:url" content="http://calcuslug.ho.ua" />
+        <meta
+            property="og:image"
+            content="./img/og-image.jpg
+        "
+        />
+        <meta
+            property="og:description"
+            content="Калькулятьр коммунальных услуг Украины, личный кабинет, история платежей"
+        />
+
+        <!-- favicon -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./img/favicon/favicon.ico"
+        />
+
+        <!-- meta seo -->
+        <meta
+            name="keywords"
+            content="комунальные платежи , личный кабинет, коммунальные новости Украина, онлайн калькулятор Украина"
+        />
+        <meta
+            name="description"
+            content="Стоимость коммунальных услуг, онлайн калькулятор коммунальных услуг"
+        />
+        <title>Калькулятор коммунальных услуг</title>
+        <meta name="author" content="Виталий Дмитрук" />
+
+        <!-- style -->
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+        <link rel="stylesheet" href="./css/styles-a.css" />
+    </head>
+    <body class="body">
+        <header class="header" id="header">
+            <div class="header__container container">
+                <div class="main-menu">
+                    <div class="greeting">
+                        Добро пожаловать,
+                        <span class="greening__name">Гость!</span>
+                    </div>
+                    <nav class="page-nav">
+                        <div class="logo">
+                            <a
+                                class="page-nav__logo-link link"
+                                href="http://calcuslug.ho.ua"
+                            >
+                                <svg class="page-nav__icon icon">
+                                    <use
+                                        href="./img/sprite.svg#icon-calculator"
+                                    ></use></svg
+                                ><span class="page-nav__logo"
+                                    >CalcUslug</span
+                                ></a
+                            >
+                        </div>
+
+                        <input
+                            class="burger-menu visually-hidden"
+                            id="burger-menu"
+                            type="checkbox"
+                        />
+
+                        <div class="menu-login">
+                            <div class="menu-login__box">
+                                <div class="menu-login__close-btn">
+                                    <span
+                                        class="menu-login__close-btn--effect"
+                                    ></span>
+                                </div>
+                                <div class="menu__select">
+                                    <label
+                                        class="menu__select-label"
+                                        for="login"
+                                        >Вход</label
+                                    >
+                                    <input
+                                        class="menu__input visually-hidden"
+                                        type="radio"
+                                        id="login"
+                                        name="login"
+                                        value="login"
+                                        checked
+                                    />
+
+                                    <div class="menu__content">
+                                        <form
+                                            class="form-login__login form"
+                                            id="form-login"
+                                            method="POST"
+                                            action="login"
+                                        >
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_login"
+                                                    >E-mail</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="email"
+                                                    id="form_login_login"
+                                                    name="email"
+                                                    placeholder="*e-mail"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_password"
+                                                    >Пароль</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="password"
+                                                    id="form_login_password"
+                                                    name="password"
+                                                    placeholder="*пароль"
+                                                    autocomplete="current-password"
+                                                    minlength="6"
+                                                    required
+                                                />
+                                            </div>
+                                            <button
+                                                class="form-login__button button"
+                                                id="login_btn"
+                                                type="submit"
+                                                value="Войти"
+                                                name="login_btn"
+                                            >
+                                                Войти
+                                            </button>
+                                            <div
+                                                class="form-login__output login_output"
+                                            >
+                                                Введите ваши данные
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <label
+                                        class="menu__select-label"
+                                        for="signin"
+                                        >Регистрация</label
+                                    >
+                                    <input
+                                        class="menu__input visually-hidden"
+                                        type="radio"
+                                        id="signin"
+                                        name="login"
+                                        value="signin"
+                                    />
+                                    <div class="menu__content">
+                                        <form
+                                            class="form-login__login form"
+                                            id="registration_form"
+                                            method="POST"
+                                            action="register"
+                                        >
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_login"
+                                                    >Логин</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="text"
+                                                    id="form_registration_login"
+                                                    name="name"
+                                                    placeholder="*логин"
+                                                    minlength="2"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_password"
+                                                    >Пароль</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="password"
+                                                    id="form_registration_password"
+                                                    name="password"
+                                                    placeholder="*пароль"
+                                                    autocomplete="current-password"
+                                                    minlength="6"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_password"
+                                                    >Повторите пароль</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="password"
+                                                    id="form_registration_password_check"
+                                                    name="password_confirmation"
+                                                    placeholder="*пароль"
+                                                    autocomplete="current-password"
+                                                    minlength="6"
+                                                    required
+                                                />
+                                            </div>
+                                            <div class="form-login__box">
+                                                <label
+                                                    class="form-login__lable"
+                                                    for="form_login_login"
+                                                    >E-mail</label
+                                                >
+                                                <input
+                                                    class="form-login__input"
+                                                    type="email"
+                                                    id="form_registration_email"
+                                                    name="email"
+                                                    placeholder="*e-mail"
+                                                    required
+                                                />
+                                            </div>
+                                            <button
+                                                class="form-login__button button"
+                                                id="registration_btn"
+                                                type="submit"
+                                                value="Зарегистрироваться"
+                                                name="registration_btn"
+                                            >
+                                                Зарегистрироваться
+                                            </button>
+                                            <div
+                                                class="form-login__output registration_output"
+                                            >
+                                                Введите ваши данные
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="burger-menu__btn" for="burger-menu">
+                            <span class="burger-menu__btn--effect"></span>
+                        </label>
+
+                        <ul class="page-nav__menu-list list">
+                            <li class="page-nav__menu-item item">
+                                <a
+                                    class="page-nav__menu-link link"
+                                    href="#section-news"
+                                    >Новости</a
+                                >
+                            </li>
+                            <li class="page-nav__menu-item item">
+                                <a
+                                    class="page-nav__menu-link link"
+                                    href="#section-tariffs"
+                                    >Действующие тарифы</a
+                                >
+                            </li>
+                            <li class="page-nav__menu-item item">
+                                <a
+                                    class="page-nav__menu-link link"
+                                    href="#section-about"
+                                    >О сайте</a
+                                >
+                            </li>
+                            <li class="page-nav__menu-item item">
+                                <a
+                                    class="page-nav__menu-link link"
+                                    href="#section-documents"
+                                    >Нормативные документы</a
+                                >
+                            </li>
+                            <li class="page-nav__menu-item item">
+                                <button
+                                    class="page-nav__menu-button login-btn button"
+                                    type="button"
+                                    id="login-btn"
+                                >
+                                    Вход
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <h1 class="main-menu__title section__title title">
+                        Калькулятор коммунальных услуг
+                    </h1>
+                </div>
+            </div>
+        </header>
+        <main class="main main__container" id="main">
+            <section class="section-news section" id="section-news">
+                <div class="container">
+                    <svg class="section__icon icon">
+                        <use href="./img/sprite.svg#icon-book"></use>
+                    </svg>
+                    <h2 class="section-news__title section__title title">
+                        Lorem ipsum dolor sit amet.
+                    </h2>
+                    <div class="section-news__content section__content">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Nulla et repellendus possimus, laboriosam eos
+                        accusamus harum tempora quae debitis. Qui adipisci
+                        natus, pariatur tenetur ut voluptate quod. Odit et
+                        sapiente suscipit earum illo quibusdam cupiditate
+                        nostrum, unde quos sint voluptatibus nemo in nobis
+                        similique voluptates ipsa iure placeat officiis aut
+                        nulla? Iste id alias commodi praesentium est dolor enim
+                        sed sequi animi corrupti voluptatum, quia tenetur
+                        maxime! Voluptate fugit odit culpa vel et. Veritatis
+                        atque nobis laudantium quisquam reprehenderit fugit
+                        eaque voluptatibus aperiam animi expedita ab possimus
+                        beatae sapiente officia facere, officiis earum. Dolorem
+                        veniam animi minus minima voluptate voluptatum laborum
+                        nemo deleniti amet magnam quia mollitia cum labore
+                        impedit eveniet earum, quidem laboriosam porro. Esse
+                        nemo amet, est commodi harum in id! Soluta sit
+                        asperiores veritatis praesentium adipisci, iste sunt
+                        possimus ullam debitis modi rem delectus qui, libero
+                        assumenda consectetur hic fugit cumque officia sequi quo
+                        beatae blanditiis? Facilis fugiat exercitationem, veniam
+                        sit officia in quisquam maiores sunt ut veritatis iure
+                        ex minima aut alias laborum dicta? Voluptate recusandae
+                        sed quo quis ipsam fuga harum tempora! Suscipit, ad.
+                        Error temporibus possimus deleniti, repellendus maxime
+                        totam earum culpa! Maiores suscipit aliquid atque
+                        doloribus molestias quasi cupiditate, laborum debitis
+                        ratione incidunt.
+                    </div>
+                    <span class="more-dots"> . . .</span>
+                    <span class="section-news__source visually-hidden br"
+                        ><a class="section-news__link" href="#" target="_blank"
+                            >источник</a
+                        >
+                    </span>
+                    <button type="button" class="section-news__expand-btn">
+                        <svg class="section-news__expand-icon">
+                            <use href="./img/sprite.svg#icon-arrow-down"></use>
+                        </svg>
+                    </button>
+                    <nav class="news-nav">
+                        <button type="button" class="read-more__btn">
+                            &#60; &#60;
+                            <span class="read-more__content"
+                                >Предыдущая новость</span
+                            >
+                        </button>
+                        <button type="button" class="read-more__btn" disabled>
+                            <span class="read-more__content"
+                                >Следующая новость</span
+                            >
+                            &#62; &#62;
+                        </button>
+                    </nav>
+                </div>
+            </section>
+            <section
+                class="section-calculator section section-calculator__bg"
+                id="section-calculator"
+            >
+                <div class="container">
+                    <svg class="section__icon icon">
+                        <use href="./img/sprite.svg#icon-calculator"></use>
+                    </svg>
+                    <h2 class="section-calculator__title section__title title">
+                        Расчёт стоимости коммунальных услуг.
+                    </h2>
+                    <form class="form__calculator form">
+                        <div class="form__wraper">
+                            <h3 class="form__title title">
+                                Вид коммунального платежа
+                            </h3>
+                            <select
+                                class="form__input cursor-pointer"
+                                id="type_of_payment"
+                                name="type_of_payment"
+                            >
+                                <option
+                                    class="form__option"
+                                    id="type1"
+                                    value="electro"
+                                    >Электроэнергия</option
+                                >
+                                <option
+                                    class="form__option"
+                                    id="type2"
+                                    value="gaz"
+                                    >Газ</option
+                                >
+                            </select>
+                        </div>
+                        <div class="form__wraper">
+                            <h3 class="form__title title">Тариф</h3>
+                            <select
+                                class="form__input cursor-pointer"
+                                id="type_of_consumption"
+                                name="type_of_consumption"
+                            >
+                                <option
+                                    class="form__option"
+                                    id="mainTariff"
+                                    value="general"
+                                    >Основной тариф</option
+                                >
+                            </select>
+                        </div>
+                        <div class="form__wraper">
+                            <h3 class="form__title title">
+                                Прошлые показания счётчика
+                            </h3>
+                            <input
+                                class="form__input"
+                                type="number"
+                                id="counter_begin"
+                                name="counter_begin"
+                            />
+                        </div>
+                        <div class="form__wraper">
+                            <h3 class="form__title title">
+                                Текущие показания счётчика
+                            </h3>
+                            <input
+                                class="form__input"
+                                type="number"
+                                id="counter_end"
+                                name="counter_end"
+                            />
+                        </div>
+
+                        <div class="form__wraper">
+                            <button class="form__button button">
+                                Рассчитать
+                            </button>
+                            <input
+                                class="form__output output_data"
+                                type="text"
+                                placeholder="*результат"
+                                readonly
+                            />
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section class="section-tariffs section" id="section-tariffs">
+                <div class="container">
+                    <svg class="section__icon icon">
+                        <use href="./img/sprite.svg#icon-line-graph"></use>
+                    </svg>
+                    <h2 class="section-tariffs__title section__title title">
+                        Таблица тарифов
+                    </h2>
+                    <table class="section-tariffs__table table">
+                        <caption class="visually-hidden">
+                            Таблица тарифов
+                        </caption>
+                        <tbody class="section-tariffs__body">
+                            <tr class="section-tariffs__row">
+                                <th
+                                    class="section-tariffs__column section-tariffs__column--header"
+                                >
+                                    Тип Энергоносителя
+                                </th>
+                                <th
+                                    class="section-tariffs__column section-tariffs__column--header section-tariffs__column--d-none"
+                                >
+                                    Описание
+                                </th>
+                                <th
+                                    class="section-tariffs__column section-tariffs__column--header"
+                                >
+                                    Тариф, грн
+                                </th>
+                                <th
+                                    class="section-tariffs__column section-tariffs__column--header"
+                                >
+                                    Тариф-2, грн
+                                </th>
+                            </tr>
+                            <tr class="section-tariffs__row">
+                                <td class="section-tariffs__column">Газ</td>
+                                <td
+                                    class="section-tariffs__column section-tariffs__column--d-none"
+                                >
+                                    Основной - население
+                                </td>
+                                <td class="section-tariffs__column">8.54892</td>
+                                <td class="section-tariffs__column"></td>
+                            </tr>
+                            <tr class="section-tariffs__row">
+                                <td class="section-tariffs__column">
+                                    Электричество
+                                </td>
+                                <td
+                                    class="section-tariffs__column section-tariffs__column--d-none"
+                                >
+                                    Основной- население, проживающее в жилых
+                                    домах, оборудованных газовыми или другими
+                                    плитами (кроме кухонных электрических плит)
+                                </td>
+                                <td class="section-tariffs__column">0.9</td>
+                                <td class="section-tariffs__column">1.68</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <section
+                class="section-about section section-about__bg"
+                id="section-about"
+            >
+                <div class="container">
+                    <svg class="section__icon icon">
+                        <use href="./img/sprite.svg#icon-home"></use>
+                    </svg>
+                    <h2 class="section__title title">О сайте</h2>
+                    <p class="section-about__content section__content">
+                        Сайт предоставляет возможность автоматически подсчитать
+                        Ваши затраты на коммунальные услуги за определённый
+                        период. Причём, лимиты, при которых изменяется стоимость
+                        услуг, высчитываются автоматически и, соответственно,
+                        расчёт производится в соответствии с потребленным
+                        количеством тарифов.
+                    </p>
+                    <p class="section-about__content section__content">
+                        Для зарегистрированных пользователей доступна
+                        возможность сохранения результатов расчета, что позволит
+                        Вам хранит в режиме он-лайн показания Ваших счётчиков за
+                        практически любой период времени. На данный момент
+                        доступны для рассчёта следующие виды коммунальных услуг:
+                    </p>
+                    <ul class="section-about__list list">
+                        <li class="section-about__item item">Электроэнергия</li>
+                        <li class="section-about__item item">Газ</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section-documents section" id="section-documents">
+                <div class="container">
+                    <svg class="section__icon icon">
+                        <use
+                            href="./img/sprite.svg#icon-magnifying-glass"
+                        ></use>
+                    </svg>
+                    <h2 class="section__title title">
+                        Ссылки на официальные источники
+                    </h2>
+                    <div class="norm-docs">
+                        <div class="norm-docs__box">
+                            <svg class="norm-docs__icon icon">
+                                <use href="./img/sprite.svg#icon-power"></use>
+                            </svg>
+                            <h3 class="norm-docs__title title">
+                                Электроэнергия:
+                            </h3>
+                            <ul class="norm-docs__list list">
+                                <li class="norm-docs__item item">
+                                    <a
+                                        class="norm-docs__item-link link"
+                                        href="http://www.nerc.gov.ua/?id=15013"
+                                        target="_blank"
+                                    >
+                                        Тарифы (НКРЕКП)</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="norm-docs__box">
+                            <svg class="norm-docs__icon icon">
+                                <use href="./img/sprite.svg#icon-fire"></use>
+                            </svg>
+                            <h3 class="norm-docs__title title">Газ:</h3>
+                            <ul class="norm-docs__list list">
+                                <li class="norm_docs__item item">
+                                    <a
+                                        class="norm-docs__item-link link"
+                                        href="http://www.nerc.gov.ua/?id=18948"
+                                        target="_blank"
+                                    >
+                                        Тарифы (НКРЕКП)</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="footer__container container">
+                <div class="footer__counter counter">
+                    <a
+                        class="counter__link"
+                        href="https://mycounter.ua/"
+                        target="_blank"
+                        onclick="this.href=my_stats_url"
+                        ><img
+                            class="counter__img"
+                            src="https://get.mycounter.ua/counter.php?id=146375&amp;w=http%3A//calcuslug.ho.ua/register&amp;s=1920x1080x24&amp;r=http%3A//calcuslug.ho.ua/login&amp;c=1&amp;j=5&amp;gmt=2&amp;dst=1"
+                            title="MyCounter - счётчик и статистика"
+                            alt="MyCounter - счётчик и статистика"
+                            width="88"
+                            height="31"
+                            border="0"
+                    /></a>
+                </div>
+                <div class="footer__copyright copyright">
+                    Copyright © Vitalii Dmytruk
+                </div>
+                <div class="footer__feedback feedback">
+                    <button class="footer__feedback-btn button">
+                        Обратная связь
+                    </button>
+                    <div class="menu__feedback">
+                        <div class="footer__feedback-box">
+                            <div class="menu-feedback__close-btn">
+                                <span
+                                    class="menu-feedback__close-btn--effect"
+                                ></span>
+                            </div>
+                            <form
+                                class="form-feedback form"
+                                id="feedback_form"
+                                method="POST"
+                                action="login"
+                            >
+                                <div class="form-feedback__box">
+                                    <label
+                                        class="form-feedback__lable"
+                                        for="form_feedback_name"
+                                        >Ваше имя</label
+                                    >
+                                    <input
+                                        class="form-feedback__input"
+                                        type="text"
+                                        id="form_feedback_name"
+                                        name="form_feedback_name"
+                                        placeholder="*Имя"
+                                        minlength="2"
+                                        value=""
+                                        required
+                                    />
+                                </div>
+                                <div class="form-feedback__box">
+                                    <label
+                                        class="form-feedback__lable"
+                                        for="form_feedback_email"
+                                        >Ваш e-mail</label
+                                    >
+                                    <input
+                                        class="form-feedback__input"
+                                        type="email"
+                                        id="form_feedback_email"
+                                        name="form_feedback_email"
+                                        placeholder="*e-mail"
+                                        value=""
+                                        required
+                                    />
+                                </div>
+                                <div class="form-feedback__box">
+                                    <label
+                                        class="form-feedback__lable"
+                                        for="form_feedback_text"
+                                        >Введите ваше сообщение:</label
+                                    >
+                                    <textarea
+                                        class="form-feedback__textarea"
+                                        id="form_feedback_text"
+                                        name="form_feedback_text"
+                                        placeholder="*Ваше сообщение"
+                                        minlength="6"
+                                        maxlength="600"
+                                        required
+                                    ></textarea>
+                                </div>
+                                <button
+                                    class="form-feedback__button button"
+                                    id="feedback_btn"
+                                    type="button"
+                                    name="feedback_btn"
+                                >
+                                    Отправить
+                                </button>
+                                <div
+                                    class="form-feedback__output feedback_output"
+                                >
+                                    Введите ваши данные
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="./js/navigation.js" type="module"></script>
+        <!-- <script src="./js/navigation.js" type="module"></script> -->
+    </body>
+</html>
